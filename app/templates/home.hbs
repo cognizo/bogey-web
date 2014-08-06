@@ -1,0 +1,17 @@
+<div id="bogey-home" class="hidden">
+    <h1>Bogey</h1>
+
+    <ul id="visualizations" class="clearfix">
+        {{#each vis in model.visualizations}}
+        <li>
+            <a {{action 'show' vis.module.bogey.name}}><img src={{{unbound vis.module.bogey.thumbnail}}}></a>
+            <div class="name">{{vis.module.bogey.name}}</div>
+        </li>
+        {{/each}}
+    </ul>
+
+    <footer>
+        <div><a href="http://bogey.cognizo.com">bogey.cognizo.com</a></div>
+        <div><a href="https://github.com/cognizo/bogey"><i class="fa fa-github"></i></a></div>
+    </footer>
+</div>

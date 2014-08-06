@@ -1,0 +1,210 @@
+@import 'lib/reset.less';
+@import 'lib/nprogress.less';
+@import '../node_modules/font-awesome/less/font-awesome.less';
+@import url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+@fa-font-path: '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/fonts/';
+@bg-color: #192024;
+@link-color: #faa520;
+@visualizations-bg-color: #232c31;
+
+#bogey-home {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: @bg-color;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    transition: opacity .7s;
+
+    a {
+        color: @link-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &.hidden {
+        opacity: 0;
+    }
+
+    .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+    .clearfix { display: inline-block; }
+    /* start commented backslash hack \*/
+    * html .clearfix { height: 1%; }
+    .clearfix { display: block; }
+    /* close commented backslash hack */
+
+    h1, h2, h3, h4 {
+        font-family: 'PT Sans Narrow', sans-serif;
+    }
+
+    h1 {
+        font-size: 70px;
+        display: block;
+        height: 100px;
+        line-height: 100px;
+        padding-left: 30px;
+        margin-top: 10px;
+    }
+
+    #visualizations {
+        background: @visualizations-bg-color;
+        margin-top: 20px;
+        padding: 30px 30px 0 30px;
+        background: @visualizations-bg-color;
+        border-top: 1px solid lighten(@visualizations-bg-color, 5%);
+        border-bottom: 1px solid lighten(@visualizations-bg-color, 5%);
+
+        li {
+            float: left;
+            display: block;
+            list-style-type: none;
+            margin: 0 30px 30px 0;
+            width: 244px;
+            opacity: 0.8;
+            transition: all 0.2s;
+
+            img {
+                width: 240px;
+                height: 135px;
+                border: 1px solid lighten(@visualizations-bg-color, 5%);
+            }
+
+            div {
+                font-size: 30px;
+                line-height: 30px;
+                padding-top: 10px;
+                text-transform: uppercase;
+                font-family: 'PT Sans Narrow', sans-serif;
+            }
+
+            &:hover {
+                cursor: pointer;
+                opacity: 1;
+            }
+        }
+    }
+
+    footer {
+        padding: 60px 0;
+        text-align: center;
+
+        div {
+            margin: 0 0 14px;
+        }
+
+        a {
+            color: lighten(@bg-color, 20%);
+
+            &:hover {
+                color: lighten(@bg-color, 25%);
+            }
+        }
+
+        i {
+            font-size: 26px;
+        }
+    }
+}
+
+iframe.bogey-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    transition: opacity .7s;
+
+    &.hidden {
+        opacity: 0;
+    }
+}
+
+div.bogey-visualization-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: opacity .7s;
+}
+
+div.bogey-message {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 85px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    color: #222;
+    opacity: 0.9;
+    transition: all 0.7s;
+    z-index: 2000;
+
+    &.hidden {
+        top: 110px;
+        opacity: 0;
+    }
+}
+
+div.bogey-help {
+    position: fixed;
+    width: 600px;
+    top: 10%;
+    left: 50%;
+    margin-left: -300px;
+    background: #232c31;
+    transition: all 0.4s;
+    padding: 20px;
+    border: 1px solid lighten(#232c31, 10%);
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+
+    &.hidden {
+        opacity: 0;
+    }
+
+    h2, h3 {
+        font-family: 'PT Sans Narrow', sans-serif;
+    }
+
+    h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 24px;
+        border-bottom: 1px solid lighten(#232c31, 10%);
+    }
+
+    ul {
+        margin-top: 16px;
+
+        li {
+            margin: 10px 0;
+        }
+    }
+
+    code {
+        font-family: 'Source Code Pro';
+        width: 140px;
+        display: inline-block;
+    }
+}
