@@ -226,9 +226,7 @@ Bogey.prototype._listen = function () {
     }
 
     if (!this._socket) {
-        this._socket = io.connect(
-            window.location.protocol + '//' + window.location.hostname + ':' + this._webSocketPort
-        );
+        this._socket = io.connect(window.location.origin);
     }
 
     this._socket.once('connect_error', function (err) {
