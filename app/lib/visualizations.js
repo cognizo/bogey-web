@@ -80,23 +80,21 @@ Visualizations.prototype.show = function (name, controller, params) {
 
             $('iframe').get(0).contentWindow.location.href = iframeSrc;
 
-            self.$iframe.on('load', function () {
-                window.setTimeout(function () {
-                    var contentWindow = self.$iframe.get(0).contentWindow;
+            $(window).on('message', function (event) {
+                var contentWindow = self.$iframe.get(0).contentWindow;
 
-                    contentWindow.Bogey.on('close', function () {
-                        self.close();
-                        controller.transitionToRoute('home', 'home');
-                    });
+                contentWindow.Bogey.on('close', function () {
+                    self.close();
+                    controller.transitionToRoute('home', 'home');
+                });
 
-                    contentWindow.Bogey.on('resize', function () {
-                        self.$home.addClass('hidden');
-                        self.show(moduleName, controller, true);
-                    });
+                contentWindow.Bogey.on('resize', function () {
+                    self.$home.addClass('hidden');
+                    self.show(moduleName, controller, true);
+                });
 
-                    // For key events.
-                    $(contentWindow).focus();
-                }, 0); // Next tick for Firefox.
+                // For key events.
+                $(contentWindow).focus();
 
                 // Give the visualization a little time to start up.
                 window.setTimeout(function () {
@@ -104,7 +102,6 @@ Visualizations.prototype.show = function (name, controller, params) {
                     nprogress.done();
                 }, 200);
             });
-
 
             callback();
         }
