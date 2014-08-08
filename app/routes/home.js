@@ -1,4 +1,4 @@
-var Ember = require('ember');
+var Ember = require('../lib/vendor/ember');
 
 module.exports = Ember.Route.extend({
     model: function (params) {

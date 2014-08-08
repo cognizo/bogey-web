@@ -1,5 +1,5 @@
 var $ = require('jquery');
-var Ember = require('ember');
+var Ember = require('../lib/vendor/ember');
 
 module.exports = Ember.ObjectController.extend({
     actions: {

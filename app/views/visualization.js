@@ -1,6 +1,6 @@
 var fs = require('fs');
 var $ = require('jquery');
-var Ember = require('ember');
+var Ember = require('../lib/vendor/ember');
 var Bogey = require('../lib/bogey');
 
 module.exports = Ember.View.extend({

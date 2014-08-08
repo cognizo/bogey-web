@@ -1,7 +1,7 @@
 var _ = require('underscore');
 var $ = require('jquery');
 var async = require('async');
-var Ember = require('ember');
+var Ember = require('./lib/vendor/ember');
 var Visualizations = require('./lib/visualizations');
 var Bogey = require('./lib/bogey');
 

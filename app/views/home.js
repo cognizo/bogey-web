@@ -1,5 +1,5 @@
 var fs = require('fs');
-var Ember = require('ember');
+var Ember = require('../lib/vendor/ember');
 
 module.exports = Ember.View.extend({
     template: Ember.Handlebars.compile(fs.readFileSync(__dirname + '/../templates/home.hbs', 'utf8')),
