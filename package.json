@@ -1,6 +1,6 @@
 {
   "name": "bogey-web",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Bogey web interface.",
   "main": "index.js",
   "repository": {
@@ -15,7 +15,7 @@
   "homepage": "https://github.com/cognizo/bogey-web",
   "browser": {
     "handlebars": "./node_modules/handlebars/dist/handlebars.js",
-    "ember": "./node_modules/ember/index.js"
+    "ember": "./app/lib/vendor/ember/index.js"
   },
   "dependencies": {
     "async": "^0.9.0",
